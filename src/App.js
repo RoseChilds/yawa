@@ -75,7 +75,7 @@ class App extends Component {
             await this.setStateAsync({reload: true});
             await this.getWeather();
             await this.setStateAsync({reload: false});
-        }, 60000);
+        }, 600000);
     }
 
     componentWillUnmount() {
