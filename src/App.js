@@ -71,6 +71,14 @@ class App extends Component {
 
     componentDidMount() {
         this.getWeather();
+        this.updateInterval = setInterval(async () => {
+            await this.setStateAsync({weather: null});
+            this.getWeather();
+        }, 60000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.updateInterval);
     }
 
     setStateAsync = (state) => {
@@ -80,9 +88,12 @@ class App extends Component {
         });
     }
     getWeather = async () => {
-        const {data: location} = await axios.get('https://ipapi.co/json/');
+        if(!this.location){
+            const {data: location} = await axios.get('https://ipapi.co/json/');
+            this.location = location;
+        }
 
-        const {data: weather} = await axios.get(`https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${location.latitude}&lon=${location.longitude}`);
+        const {data: weather} = await axios.get(`https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${this.location.latitude}&lon=${this.location.longitude}`);
         console.log(weather);
         await this.setStateAsync({weather: {...weather.properties, current: weather.properties.timeseries[0].data}});
     }
