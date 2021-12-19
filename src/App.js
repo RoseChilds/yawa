@@ -12,6 +12,7 @@ import foggy from './models/foggy.gltf';
 import showers from './models/showers.gltf';
 import showersthunder from './models/showersthunder.gltf';
 import statusinfo from './statusinfo.json';
+import MovingArrow from "./MovingArrow";
 
 const weathers = {
     clearsky: sunny,
@@ -98,6 +99,11 @@ class App extends Component {
                         icon={weathers[this.state.weather.current.next_1_hours.summary.symbol_code]}/>
                     <h1 className={"status"}>
                         Current weather: {statusinfo[this.state.weather.current.next_1_hours.summary.symbol_code].desc_en}.
+                        <br/>
+                        Wind direction: <MovingArrow
+                            angle={this.state.weather.current.instant.details.wind_from_direction}
+                            style={{position: "relative", width: "fit-content", display: "inline-block"}}
+                        />
                     </h1>
                 </div> : <h1 className={"status"}>Loading...</h1>}
             </div>
