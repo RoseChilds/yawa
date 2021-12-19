@@ -96,7 +96,14 @@ class App extends Component {
                 </div>
                 {this.state.weather ? <div>
                     <WeatherIcon
-                        icon={weathers[this.state.weather.current.next_1_hours.summary.symbol_code]}/>
+                        icon={weathers[this.state.weather.current.next_1_hours.summary.symbol_code]}
+                        style={{
+                            position: 'absolute',
+                            top: '0',
+                            left: '0',
+                            width: '100%',
+                            height: '100%',
+                        }}/>
                     <h1 className={"status"}>
                         Current weather: {statusinfo[this.state.weather.current.next_1_hours.summary.symbol_code].desc_en}.
                         <br/>
