@@ -108,6 +108,7 @@ class App extends Component {
                 </div>
                 {this.state.weather ? <div>
                     {this.state.reload ? null : <WeatherIcon
+                        intensity={0.35}
                         icon={weathers[this.state.weather.current.next_1_hours.summary.symbol_code]}
                         style={{
                             position: 'absolute',
