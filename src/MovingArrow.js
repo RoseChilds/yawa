@@ -16,10 +16,11 @@ class MovingArrow extends Component{
 
     async componentDidMount() {
         let angle = Math.floor(Math.random() * 360);
-        let target = this.props.angle + 360 + angle + (360-angle);
+        let _angle = angle;
+        let target = this.props.angle + 360 + (360-angle);
         let j = 60;
         for(let i = 0; i<j; i++){
-            angle = target*easeOutExpo(i/j)
+            angle = _angle + target*easeOutExpo(i/j)
             await this.setState({angle: angle});
             await new Promise(resolve => setTimeout(resolve, 1000/60));
         }
