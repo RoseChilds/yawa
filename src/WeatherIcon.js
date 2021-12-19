@@ -22,8 +22,8 @@ function WeatherIcon(props) {
     const gltf = useLoader(GLTFLoader, props.icon)
     gltf.scene.scale.set(2, 2, 2);
     useFrame(() => {
-        ref.current.rotation.x = 90 + (mouse.y * 0.2);
-        ref.current.rotation.z = mouse.x * 0.2;
+        ref.current.rotation.x = 90 + (mouse.y * props.intensity);
+        ref.current.rotation.z = mouse.x * props.intensity;
     });
     return (
         <primitive object={gltf.scene} ref={ref} />
@@ -46,7 +46,7 @@ class WeatherIconParent extends Component {
                         <ambientLight intensity={0.5} />
                         <spotLight position={[10, 15, 10]} angle={0.15} penumbra={1} intensity={1}
                                    shadow-mapSize={[512, 512]} castShadow={true}/>
-                        <WeatherIcon icon={this.state.icon}/>
+                        <WeatherIcon icon={this.state.icon} intensity={this.props.intensity || 0.2}/>
                     </Canvas>
                 </Suspense>
             </div>
