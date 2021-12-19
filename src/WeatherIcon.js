@@ -40,7 +40,7 @@ class WeatherIconParent extends Component {
 
     render() {
         return (
-            <div className={"WeatherIcon"}>
+            <div className={"WeatherIcon"} style={this.props.style || {}}>
                 <Suspense fallback={<div/>}>
                     <Canvas camera={{fov: 75, position: [0, -2.75, 5]}}>
                         <ambientLight intensity={0.5} />
