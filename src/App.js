@@ -10,6 +10,9 @@ class App extends Component {
         this.state = {
             weather: null
         }
+    }
+
+    componentDidMount() {
         this.getWeather();
     }
 
