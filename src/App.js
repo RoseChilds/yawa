@@ -72,8 +72,9 @@ class App extends Component {
     componentDidMount() {
         this.getWeather();
         this.updateInterval = setInterval(async () => {
-            await this.setStateAsync({weather: null});
-            this.getWeather();
+            await this.setStateAsync({reload: true});
+            await this.getWeather();
+            await this.setStateAsync({reload: false});
         }, 60000);
     }
 
@@ -106,7 +107,7 @@ class App extends Component {
                     <h3 className={"notop nobottom"}>Yet another weather app</h3>
                 </div>
                 {this.state.weather ? <div>
-                    <WeatherIcon
+                    {this.state.reload ? null : <WeatherIcon
                         icon={weathers[this.state.weather.current.next_1_hours.summary.symbol_code]}
                         style={{
                             position: 'absolute',
@@ -115,13 +116,14 @@ class App extends Component {
                             width: '100%',
                             height: '100%',
                         }}/>
+                    }
                     <h1 className={"status"}>
                         Current weather: {statusinfo[this.state.weather.current.next_1_hours.summary.symbol_code].desc_en}.
                         <br/>
-                        Wind direction: <MovingArrow
+                        Wind direction: {this.state.reload ? null : <MovingArrow
                             angle={this.state.weather.current.instant.details.wind_from_direction}
                             style={{position: "relative", width: "fit-content", display: "inline-block"}}
-                        />
+                        />}
                     </h1>
                 </div> : <h1 className={"status"}>Loading...</h1>}
             </div>
