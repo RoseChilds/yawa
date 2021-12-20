@@ -1,7 +1,7 @@
-import {render, screen} from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders title', () => {
+test("renders title", () => {
   render(<App />);
   const title = screen.getByText(/YAWA/i);
   expect(title).toBeInTheDocument();

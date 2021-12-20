@@ -1,5 +1,5 @@
-.WeatherIcon{
-    position: relative;
-    overflow: hidden;
-    pointer-events: none;
+.WeatherIcon {
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
 }
