@@ -1,10 +1,11 @@
 import "./App.css";
-import { Component } from "react";
+import {Component} from "react";
 import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
 import statusinfo from "./statusinfo.json";
 import MovingArrow from "./MovingArrow";
 import weathers from "./constants/weathers";
+
 // App class
 class App extends Component {
   constructor() {
@@ -20,7 +21,6 @@ class App extends Component {
     this.updateInterval = setInterval(async () => {
       await this.setStateAsync({ reload: true });
       await this.getWeather();
-      await this.setStateAsync({ reload: false });
     }, 600000);
   }
 
@@ -44,12 +44,16 @@ class App extends Component {
     const { data: weather } = await axios.get(
         `${link}lat=${this.location.latitude}&lon=${this.location.longitude}`
     );
-    console.log(weather);
+
     await this.setStateAsync({
       weather: {
         ...weather.properties,
-        current: weather.properties.timeseries[0].data,
+        current: {
+          ...weather.properties.timeseries[0].data,
+          symbol: weather.properties.timeseries[0].data.next_1_hours.summary.symbol_code.split("_")[0]
+        },
       },
+      reload: false,
     });
   };
 
@@ -67,7 +71,7 @@ class App extends Component {
                 intensity={0.35}
                 icon={
                   weathers[
-                    this.state.weather.current.next_1_hours.summary.symbol_code
+                    this.state.weather.current.symbol
                   ]
                 }
                 style={{
@@ -83,7 +87,7 @@ class App extends Component {
               Current weather:{" "}
               {
                 statusinfo[
-                  this.state.weather.current.next_1_hours.summary.symbol_code
+                  this.state.weather.current.symbol
                 ].desc_en
               }
               .
