@@ -1,24 +1,35 @@
-body{
-    text-align: center;
-    user-select: none;
+@font-face {
+    font-family: "poppins";
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 }
-.left{
-    text-align: left;
+
+* {
+    border: 0;
+    margin: 0;
+    background-size: 100%;
 }
-.maintitle {
-    padding: 1rem;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+.navbar {
+    padding: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
-.nobottom{
-    margin-bottom: 0;
+
+.nav-container {
+    list-style-type: none;
+    display: flex;
+    
 }
-.notop{
-    margin-top: 0;
+
+li button {
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    font-family: 'poppins';
+    width: 50%
 }
-.status{
-    position: absolute;
-    top: 15%;
-    width: 100%;
+.status {
+    background-color: aqua;
 }

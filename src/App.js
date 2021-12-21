@@ -60,9 +60,14 @@ class App extends Component {
   render() {
     return (
       <div className={"app"}>
-        <div className={"left maintitle"}>
-          <h1 className={"notop nobottom"}>YAWA</h1>
-          <h3 className={"notop nobottom"}>Yet another weather app</h3>
+        <div className={"navbar"}>
+          <h1 className={"site-name"}>YAWA</h1>
+          <ul className={"nav-container"}>
+            <li><button href='#'>Home</button></li>
+            <li><button href='#'>Weather</button></li>
+            <li><button href='#'>About</button></li>
+            <li><button href='#'>Credits</button></li>
+        </ul>
         </div>
         {this.state.weather ? (
           <div>
