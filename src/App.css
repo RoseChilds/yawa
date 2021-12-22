@@ -9,32 +9,7 @@
   background-size: 100%;
 }
 
-.navbar {
-  padding: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-container {
-  list-style-type: none;
-  display: flex;
-}
-
-li a {
-  background-color: rgba(255, 255, 255, 0);
-  display: flex;
-  justify-content: center;
-  font-family: "Poppins", "Segoe-UI", "Ubuntu", sans-serif;
-  cursor: pointer;
-  padding-left: 5px;
-  padding-right: 5px;
-  text-decoration: none;
-  color: black;
-}
-li a.active {
-  text-decoration: underline;
-}
-.status {
-  background-color: aqua;
+body {
+  background-color: #1f1d36;
+  color: #e9a6a6;
 }
