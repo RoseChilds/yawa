@@ -1,42 +1,40 @@
 @font-face {
-    font-family: "poppins";
-    src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+  font-family: "poppins";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 }
 
 * {
-    border: 0;
-    margin: 0;
-    background-size: 100%;
+  border: 0;
+  margin: 0;
+  background-size: 100%;
 }
 
 .navbar {
-    padding: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  padding: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-container {
-    list-style-type: none;
-    display: flex;
-    
+  list-style-type: none;
+  display: flex;
 }
 
 li a {
-    background-color: rgba(255, 255, 255, 0);
-    display: flex;
-    justify-content: center;
-    font-family: 'Poppins', 'Segoe-UI', 'Ubuntu', sans-serif;
-    cursor: pointer;
-    padding-left: 5px;
-    padding-right: 5px;
-    text-decoration: none;
-    color: black;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", "Segoe-UI", "Ubuntu", sans-serif;
+  cursor: pointer;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+  color: black;
 }
-li a.active{
-    text-decoration: underline;
+li a.active {
+  text-decoration: underline;
 }
 .status {
-    background-color: aqua;
+  background-color: aqua;
 }

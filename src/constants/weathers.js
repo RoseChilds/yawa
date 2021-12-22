@@ -50,6 +50,6 @@ const weathers = {
   snowandthunder: thunderstorm,
   snowshowers: snowy,
   snowshowersandthunder: showersthunder,
-}
+};
 
-export default weathers
+export default weathers;
