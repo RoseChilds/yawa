@@ -1,10 +1,9 @@
 import "./App.css";
-import { Component } from "react";
+import {Component} from "react";
 import NavBar from "./NavBar";
 import Weather from "./Weather";
 import About from "./About";
-import Credits from "./Credits";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 // App class
 class App extends Component {
@@ -27,13 +26,10 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/">
-              <Weather />
-            </Route>
-            <Route path="/about">
               <About />
             </Route>
-            <Route path="/credits">
-              <Credits />
+            <Route path="/weather">
+              <Weather />
             </Route>
             <Route path={"*"}>
               <div>
