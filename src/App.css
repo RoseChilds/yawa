@@ -43,9 +43,13 @@ body {
 }
 
 .intro-wrapper {
-  padding: 20px;
   display: grid;
-  grid-template-columns: 2fr 2fr;
-  color: #e9a6a6;
+  grid-template-columns: 10fr 10fr;
+  grid-template-rows: repeat(2, 100px);
+  grid-auto-flow: dense;
   place-items: center;
+}
+
+.cell {
+  background-color: blue;
 }
