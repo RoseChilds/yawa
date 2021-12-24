@@ -9,6 +9,12 @@ class HomePage extends Component {
           <p>Weather Application</p>
         </h2>
         <p>but clean and aesthetic for the sanity of your eyes</p>
+        {/* Putting our avatar here would be a nice addition */}
+        <p>RoseChilds and LeVonara</p>
+        <h2>
+          <p>Developed by ❤️</p>
+          <p>with these people</p>
+        </h2>
       </div>
     );
   }
