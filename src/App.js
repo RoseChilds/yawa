@@ -1,9 +1,9 @@
 import "./App.css";
-import {Component} from "react";
+import { Component } from "react";
 import NavBar from "./NavBar";
 import Weather from "./Weather";
-import About from "./About";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import HomePage from "./home-page";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // App class
 class App extends Component {
@@ -26,7 +26,7 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/">
-              <About />
+              <HomePage />
             </Route>
             <Route path="/weather">
               <Weather />

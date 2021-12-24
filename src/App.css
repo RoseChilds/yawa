@@ -41,3 +41,12 @@ body {
   background-color: #e9a6a6;
   color: #1f1d36;
 }
+
+.intro-wrapper {
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  color: #e9a6a6;
+}
