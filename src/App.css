@@ -11,36 +11,33 @@
 
 body {
   background-color: #1f1d36;
-  color: #e9a6a6;
+  height: 50rem;
 }
 
 .navbar {
   background-color: #3f3351;
-  color: #e9a6a6;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding: 25px;
 }
 
-.navbar-main span {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-span a {
+.navbar a {
   color: #e9a6a6;
+  text-decoration: none;
 }
 
 .weather {
+  outline: #e9a6a6 solid 2px;
   transition: 0.5s;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-radius: 50px;
+  border-radius: 70px;
 }
 
 .weather:hover {
-  background-color: #864879;
+  background-color: #e9a6a6;
+  color: #1f1d36;
 }
